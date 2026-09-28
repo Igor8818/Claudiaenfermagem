@@ -18,16 +18,18 @@ const MIME_TYPES = {
   '.webm': 'video/webm'
 };
 
+const ROOT_DIR = path.join(__dirname, '..');
+
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/' || reqPath === '') {
     reqPath = '/index.html';
   }
 
-  const filePath = path.join(__dirname, reqPath);
+  const filePath = path.join(ROOT_DIR, reqPath);
 
   // Segurança básica contra directory traversal
-  if (!filePath.startsWith(__dirname)) {
+  if (!filePath.startsWith(ROOT_DIR)) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
     return res.end('403 Proibido');
   }
@@ -78,7 +80,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
   console.log(`\n======================================================`);
-  console.log(`✨ Landing Page Claudia Fontes rodando com suporte a vídeo!`);
+  console.log(`✨ Landing Page Claudia Fontes rodando localmente!`);
   console.log(`🌐 Acesse no seu navegador: http://localhost:${PORT}`);
   console.log(`======================================================\n`);
 });
