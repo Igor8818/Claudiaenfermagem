@@ -1,0 +1,10 @@
+{
+  "name": "claudia-fontes-landing-page",
+  "version": "1.0.0",
+  "description": "Landing Page Profissional para Claudia Fontes - Enfermagem Especializada, Podologia e Laserterapia em Itabuna/BA",
+  "scripts": {
+    "build": "echo static build complete",
+    "start": "node scripts/server.js",
+    "dev": "node scripts/server.js"
+  }
+}
