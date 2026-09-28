@@ -18,12 +18,12 @@ function initNavbarScroll() {
   if (!header) return;
 
   const handleScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('shadow-md', 'bg-white/95', 'py-3');
-      header.classList.remove('bg-white/90', 'py-4');
+    if (window.scrollY > 15) {
+      header.classList.add('shadow-sm', 'bg-white/95');
+      header.classList.remove('bg-white/90');
     } else {
-      header.classList.remove('shadow-md', 'bg-white/95', 'py-3');
-      header.classList.add('bg-white/90', 'py-4');
+      header.classList.remove('shadow-sm', 'bg-white/95');
+      header.classList.add('bg-white/90');
     }
   };
 
