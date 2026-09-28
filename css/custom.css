@@ -1,0 +1,274 @@
+/* Claudia Fontes - Enfermagem Especializada, Podologia & Laserterapia
+   Design System Sofisticado, Minimalista & Credibilidade Clínica
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --teal-primary: #0d9488;
+  --teal-dark: #0f766e;
+  --teal-deep: #0b4a45;
+  --teal-light: #14b8a6;
+  --teal-subtle: #f0fdfa;
+  --teal-tint: #f0faf8;
+  
+  --lilac-accent: #7c3aed;
+  --lilac-dark: #6d28d9;
+  --lilac-subtle: #f5f3ff;
+  --lilac-tint: #f8f7fb;
+
+  --slate-dark: #0f172a;
+  --slate-body: #475569;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #334155;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* 1. Gradientes de Texto Sutis */
+.gradient-text {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 60%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-teal {
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* 2. Cards com Alto Relevo e Micro-interações */
+.clean-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.clean-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(13, 148, 136, 0.35);
+  box-shadow: 0 16px 32px -8px rgba(13, 148, 136, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+.clean-card:hover .card-icon {
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px -4px rgba(13, 148, 136, 0.25);
+}
+
+.card-icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* 3. Smartphone Mockup Moderno (Player de Reel) */
+.phone-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 295px;
+  aspect-ratio: 9 / 18.5;
+  background: #0f172a;
+  border-radius: 40px;
+  padding: 9px;
+  box-shadow: 
+    0 30px 60px -12px rgba(15, 23, 42, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 0 3px #1e293b,
+    0 12px 30px -6px rgba(13, 148, 136, 0.15);
+  margin: 0 auto;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+@media (min-width: 640px) {
+  .phone-mockup {
+    max-width: 310px;
+    border-radius: 44px;
+    padding: 10px;
+    box-shadow: 
+      0 35px 70px -15px rgba(15, 23, 42, 0.42),
+      0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+      0 0 0 4px #1e293b,
+      0 15px 35px -8px rgba(13, 148, 136, 0.2);
+  }
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000000;
+}
+
+@media (min-width: 640px) {
+  .phone-screen {
+    border-radius: 35px;
+  }
+}
+
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 17px;
+  background: #0f172a;
+  border-radius: 20px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.phone-notch::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1e293b;
+  border: 1.5px solid #334155;
+}
+
+/* Enquadramento Equilibrado do Vídeo Domiciliar (Rosto Nítido e Proporção Perfeita) */
+.video-domiciliar-player video {
+  object-fit: cover !important;
+  object-position: center 24% !important;
+  width: 100%;
+  height: 100%;
+}
+
+.clinic-photo-frame img {
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* 4. Scroll Reveal (Fade-in e Slide-up) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* 5. Accordion com Animação Fluida */
+.faq-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.faq-content.expanded {
+  opacity: 1;
+}
+
+/* 6. Botão Flutuante do WhatsApp com Pulso Sutil */
+.whatsapp-floating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.4);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-floating:hover {
+  transform: translateY(-3px) scale(1.04);
+  background-color: #059669;
+  box-shadow: 0 14px 28px -2px rgba(16, 185, 129, 0.5);
+}
+
+.whatsapp-floating::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.6);
+  animation: pulse-ring 2.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.9;
+  }
+  50%, 100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+/* Controle de Áudio Flutuante nos Players */
+.audio-toggle-btn {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.audio-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.9);
+  transform: scale(1.06);
+}
+
+/* Scrollbar Sutil */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
